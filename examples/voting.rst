@@ -139,7 +139,7 @@
         }
 
         /// @dev 结合之前所有的投票，计算出最终胜出的提案
-        function winningProposal() external view
+        function winningProposal() public view
                 returns (uint winningProposal_)
         {
             uint winningVoteCount = 0;
@@ -152,7 +152,7 @@
         }
 
         // 调用 winningProposal() 函数以获取提案数组中获胜者的索引，并以此返回获胜者的名称
-        function winnerName() public view
+        function winnerName() external view
                 returns (bytes32 winnerName_)
         {
             winnerName_ = proposals[winningProposal()].name;
